@@ -14,7 +14,6 @@ import javax.swing.border.EmptyBorder;
 /**
  * Created by oom on 11/30/2016 AD.
  */
-
 public class Background extends JFrame {
 
     BufferedImage img = ImageIO.read(new File("C://pic//st1.jpg"));
