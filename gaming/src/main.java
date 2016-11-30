@@ -24,32 +24,22 @@ public class main {
         TimeUnit.SECONDS.sleep(2);
         i1.Item1(frame.layeredPane);
         int time = 100;
-        while(state == 0){
+        while(state == 0 && time > 0){
             TimeUnit.SECONDS.sleep(1);
             time--;
             System.out.println("time : " + time);
             System.out.println("state : " + state);
         }
-        i1.removeItem(frame.layeredPane,i1.botton);
-        TimeUnit.SECONDS.sleep(2);
-        frame.nextStage();
-       // Stage st = new Stage();
-        //TimeUnit.SECONDS.sleep(2);
-        //st.ChangeStage2();
-        //TimeUnit.SECONDS.sleep(1);
-
-        // Run the GUI construction on the event-dispatching thread for thread safety
-/*        javax.swing.SwingUtilities.invokeLater( new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Stage st = new Stage();
-                    st.Changing();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-*/
+        if(time > 0) {
+            state = 1;
+            i1.removeItem(frame.layeredPane, i1.botton);
+            frame.nextStage();
+        }
+        while(state ==1 && time>0){
+            TimeUnit.SECONDS.sleep(1);
+            time--;
+            System.out.println("time : " + time);
+            System.out.println("state : " + state);
+        }
     }
 }
