@@ -19,12 +19,6 @@ public class Background extends JFrame {
     private int width;
     private int height;
 
-    private MouseListener listener = new MouseAdapter(){
-        public void mouseClicked(MouseEvent e){
-
-        }
-    };
-
     JLayeredPane layeredPane = getLayeredPane();
     JLabel lbl = new JLabel();
 
