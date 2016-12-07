@@ -6,6 +6,7 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import javax.imageio.ImageIO;
 
 /**
@@ -13,8 +14,8 @@ import javax.imageio.ImageIO;
  */
 public class Background extends JFrame {
 
-    BufferedImage img = ImageIO.read(new File("C://pic//st1.jpg"));
-    BufferedImage img2 = ImageIO.read(new File("C://pic//st2.jpg"));
+    BufferedImage img = ImageIO.read(new File("C://pic//room1//BG1.jpg"));
+    BufferedImage img2 = ImageIO.read(new File("C://pic//room2//BG22.jpg"));
 
     private int width;
     private int height;
@@ -52,14 +53,14 @@ public class Background extends JFrame {
         layeredPane.add(panel1,new Integer(1));
     }
 
-    public void nextStage(){
+    public void nextStage() {
         ImageIcon icon = new ImageIcon(img2);
         lbl.setIcon(icon);
         JPanel panel1 = new JPanel();
-        panel1.setBounds(0,0,img.getWidth(),img.getHeight());
+        panel1.setBounds(0, 0, width, height);
         panel1.setOpaque(false);
         panel1.add(lbl);
-        layeredPane.add(panel1,new Integer(1));
+        layeredPane.add(panel1, new Integer(1));
     }
 
 }

@@ -10,22 +10,26 @@ import java.io.IOException;
  */
 public class Items extends JComponent{
 
-    BufferedImage ball = ImageIO.read(new File("C://pic//ball55.png"));
-
-    JButton botton = new JButton(new ImageIcon(ball));
+    BufferedImage picmesseges = ImageIO.read(new File("C://pic//room1//messeges.png"));
+    JButton botton = new JButton(new ImageIcon(picmesseges));
+    int x,y;
 
     Items() throws IOException {
     }
 
+    public void setxy(int x,int y){
+        this.x = x;
+        this.y = y;
+    }
 
-    public void Item1(JLayeredPane lp){
+    public void ItemCall(JLayeredPane lp){
 
         botton.setVisible(true);
         botton.setOpaque(false);
         botton.setContentAreaFilled(false);
         botton.setFocusPainted(false);
         botton.setBorder(BorderFactory.createEmptyBorder());
-        botton.setBounds(400,200,ball.getWidth(),ball.getHeight());
+        botton.setBounds(x,y,picmesseges.getWidth(),picmesseges.getHeight());
         botton.addActionListener(new CustomActionListener());
         lp.add(botton,new Integer(2));
 
@@ -38,7 +42,9 @@ public class Items extends JComponent{
     class CustomActionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             System.out.println("Clicked");
-            main.nextState();
+            if(main.getState() == 0) {
+                main.nextState();
+            }
         }
     }
 
