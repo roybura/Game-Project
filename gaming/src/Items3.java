@@ -7,19 +7,16 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by HP on 7/12/2559.
+ * Created by Pair on 14/12/2559.
  */
-public class Items2 extends JComponent {
+public class Items3 extends JComponent{
+    BufferedImage note1 = ImageIO.read(new File("noteInLivingroom.png")); //i4
 
-    BufferedImage fampic1 = ImageIO.read(new File("familypic1.png"));
-    BufferedImage fampic2 = ImageIO.read(new File("familypic2.png"));
-    BufferedImage fampic3 = ImageIO.read(new File("familypic3.png"));
-
-    JButton botton = new JButton(new ImageIcon(fampic1));
+    JButton botton = new JButton(new ImageIcon(note1));
 
     int x,y;
 
-    Items2() throws IOException {
+    Items3() throws IOException {
     }
 
     public void setxy(int x,int y){
@@ -33,18 +30,9 @@ public class Items2 extends JComponent {
         botton.setContentAreaFilled(false);
         botton.setFocusPainted(false);
         botton.setBorder(BorderFactory.createEmptyBorder());
-        botton.setBounds(x,y,fampic1.getWidth(),fampic1.getHeight());
-        botton.addActionListener(new Items2.CustomActionListener());
-        lp.add(botton,new Integer(2));
-
-    }
-
-    public void ChangePicState2(JLayeredPane lp){
-        botton.setIcon(new ImageIcon(fampic2));
-    }
-
-    public void ChangePicState3(JLayeredPane lp){
-        botton.setIcon(new ImageIcon(fampic3));
+        botton.setBounds(x,y,note1.getWidth(),note1.getHeight());
+        botton.addActionListener(new Items3.CustomActionListener());
+        lp.add(botton,new Integer(3));
     }
 
     public void removeItem(JLayeredPane lp,JButton b){
@@ -54,9 +42,10 @@ public class Items2 extends JComponent {
     class CustomActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Clicked");
-            if(main.getState() == 2) {
+            if(main.getState() == 1) {
                 main.nextState();
             }
         }
     }
+
 }
