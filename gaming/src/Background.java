@@ -13,6 +13,9 @@ public class Background extends JFrame {
     BufferedImage img = ImageIO.read(new File("coverofgame.jpg"));
     BufferedImage img1 = ImageIO.read(new File("BGlivingroom.jpg"));
     BufferedImage img2 = ImageIO.read(new File("BGmother'sroom1.jpg"));
+    BufferedImage img3 = ImageIO.read(new File("BGsonroom1.jpg"));
+    BufferedImage img4 = ImageIO.read(new File("BGgirlroom1.jpg"));
+    BufferedImage img5 = ImageIO.read(new File("BGworkingroom1.jpg"));
 
     private int width;
     private int height;
@@ -60,7 +63,7 @@ public class Background extends JFrame {
         layeredPane.add(panel1, new Integer(1));
     }
 
-    public void nextStage1() {
+    public void nextStage1() throws IOException {
         ImageIcon icon = new ImageIcon(img2);
         lbl.setIcon(icon);
         JPanel panel1 = new JPanel();
@@ -68,6 +71,40 @@ public class Background extends JFrame {
         panel1.setOpaque(false);
         panel1.add(lbl);
         layeredPane.add(panel1, new Integer(1));
+
+    }
+
+    public void nextStage2() throws IOException {
+        ImageIcon icon = new ImageIcon(img3);
+        lbl.setIcon(icon);
+        JPanel panel1 = new JPanel();
+        panel1.setBounds(0, 0, width, height);
+        panel1.setOpaque(false);
+        panel1.add(lbl);
+        layeredPane.add(panel1, new Integer(1));
+
+    }
+
+    public void nextStage3() throws IOException {
+        ImageIcon icon = new ImageIcon(img4);
+        lbl.setIcon(icon);
+        JPanel panel1 = new JPanel();
+        panel1.setBounds(0, 0, width, height);
+        panel1.setOpaque(false);
+        panel1.add(lbl);
+        layeredPane.add(panel1, new Integer(1));
+
+    }
+
+    public void nextStage4() throws IOException {
+        ImageIcon icon = new ImageIcon(img5);
+        lbl.setIcon(icon);
+        JPanel panel1 = new JPanel();
+        panel1.setBounds(0, 0, width, height);
+        panel1.setOpaque(false);
+        panel1.add(lbl);
+        layeredPane.add(panel1, new Integer(1));
+
     }
 
 }
