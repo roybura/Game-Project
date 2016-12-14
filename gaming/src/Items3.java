@@ -16,13 +16,14 @@ public class Items3 extends JComponent{
     BufferedImage note2 = ImageIO.read(new File("note.png"));  //i7 not open
     BufferedImage car = ImageIO.read(new File("car.png")); //i12
     BufferedImage ghost2 = ImageIO.read(new File("ghostwithrope.png")); //i20
+    BufferedImage Bigpic = ImageIO.read(new File("fatherpicBig.png")); //i24
 
 
     JButton botton3 = new JButton(new ImageIcon(note1));
     JButton botton7 = new JButton(new ImageIcon(note2));
     JButton botton12 = new JButton(new ImageIcon(car));
     JButton botton20 = new JButton(new ImageIcon(ghost2));
-
+    JButton botton24 = new JButton(new ImageIcon(Bigpic));
 
     int x,y;
 
@@ -78,6 +79,16 @@ public class Items3 extends JComponent{
         lp.add(botton20,new Integer(3));
     }
 
+    public void ItemCall24(JLayeredPane lp){
+        botton24.setVisible(true);
+        botton24.setOpaque(false);
+        botton24.setContentAreaFilled(false);
+        botton24.setFocusPainted(false);
+        botton24.setBorder(BorderFactory.createEmptyBorder());
+        botton24.setBounds(x,y,Bigpic.getWidth(),Bigpic.getHeight());
+        botton24.addActionListener(new Items3.CustomActionListener());
+        lp.add(botton24,new Integer(3));
+    }
 
 
     public void removeItem(JLayeredPane lp,JButton b){
@@ -96,6 +107,8 @@ public class Items3 extends JComponent{
                 main.nextState3();
             }else if (main.getState4() == 3) {
                 main.nextState4();
+            }else if (main.getState5() == 1 || main.getState5() == 2) {
+                main.nextState5();
             }
         }
 

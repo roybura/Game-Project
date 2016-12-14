@@ -12,8 +12,12 @@ import java.io.IOException;
 public class Items6 extends JComponent{
     BufferedImage chair = ImageIO.read(new File("chair1.png")); //i16
     BufferedImage chair1 = ImageIO.read(new File("chair2.png"));
+    BufferedImage Dadpic = ImageIO.read(new File("pic1.png")); // i21
+    BufferedImage picdown = ImageIO.read(new File("pic2.png")); //i27
 
     JButton botton16 = new JButton(new ImageIcon(chair));
+    JButton botton21 = new JButton(new ImageIcon(Dadpic));
+    JButton botton27 = new JButton(new ImageIcon(picdown));
 
     int x,y;
 
@@ -36,6 +40,28 @@ public class Items6 extends JComponent{
         lp.add(botton16,new Integer(2));
     }
 
+    public void ItemCall21(JLayeredPane lp){
+        botton21.setVisible(true);
+        botton21.setOpaque(false);
+        botton21.setContentAreaFilled(false);
+        botton21.setFocusPainted(false);
+        botton21.setBorder(BorderFactory.createEmptyBorder());
+        botton21.setBounds(x,y,Dadpic.getWidth(),Dadpic.getHeight());
+        botton21.addActionListener(new Items6.CustomActionListener());
+        lp.add(botton21,new Integer(2));
+    }
+
+    public void ItemCall27(JLayeredPane lp){
+        botton27.setVisible(true);
+        botton27.setOpaque(false);
+        botton27.setContentAreaFilled(false);
+        botton27.setFocusPainted(false);
+        botton27.setBorder(BorderFactory.createEmptyBorder());
+        botton27.setBounds(x,y,picdown.getWidth(),picdown.getHeight());
+        botton27.addActionListener(new Items6.CustomActionListener());
+        lp.add(botton27,new Integer(2));
+    }
+
     public void ChangePicState5(JLayeredPane lp){
         botton16.setIcon(new ImageIcon(chair1));
     }
@@ -49,6 +75,8 @@ public class Items6 extends JComponent{
             System.out.println("Clicked");
             if( main.getState4() == 1 ){
                 main.nextState4();
+            }else if (main.getState5() == 0 || main.getState5() == 6){
+                main.nextState5();
             }
         }
     }

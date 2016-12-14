@@ -14,11 +14,15 @@ public class Items5 extends JComponent {
     BufferedImage books = ImageIO.read(new File("books.png"));  //i8
     BufferedImage blood2 = ImageIO.read(new File("bloodonthefloor.png")); //i13
     BufferedImage mirror = ImageIO.read(new File("mirrorbase.png")); //i18
+    BufferedImage radio = ImageIO.read(new File("radio.png")); //i22
+    BufferedImage key = ImageIO.read(new File("key.png")); //i28
 
     JButton botton4 = new JButton(new ImageIcon(clock));
     JButton botton8 = new JButton(new ImageIcon(books));
     JButton botton13 = new JButton(new ImageIcon(blood2));
     JButton botton18 = new JButton(new ImageIcon(mirror));
+    JButton botton22 = new JButton(new ImageIcon(radio));
+    JButton botton28 = new JButton(new ImageIcon(key));
 
     int x,y;
 
@@ -74,6 +78,28 @@ public class Items5 extends JComponent {
         lp.add(botton18,new Integer(2));
     }
 
+    public void ItemCall22(JLayeredPane lp){
+        botton22.setVisible(true);
+        botton22.setOpaque(false);
+        botton22.setContentAreaFilled(false);
+        botton22.setFocusPainted(false);
+        botton22.setBorder(BorderFactory.createEmptyBorder());
+        botton22.setBounds(x,y,radio.getWidth(),radio.getHeight());
+        botton22.addActionListener(new Items5.CustomActionListener());
+        lp.add(botton22,new Integer(2));
+    }
+
+    public void ItemCall28(JLayeredPane lp){
+        botton28.setVisible(true);
+        botton28.setOpaque(false);
+        botton28.setContentAreaFilled(false);
+        botton28.setFocusPainted(false);
+        botton28.setBorder(BorderFactory.createEmptyBorder());
+        botton28.setBounds(x,y,key.getWidth(),key.getHeight());
+        botton28.addActionListener(new Items5.CustomActionListener());
+        lp.add(botton28,new Integer(3));
+    }
+
     public void removeItem(JLayeredPane lp,JButton b){
         lp.remove(b);
     }
@@ -84,10 +110,12 @@ public class Items5 extends JComponent {
             if( main.getState() == 3 || main.getState2() == 3 || main.getState2() == 4 ){
                 main.nextState();
                 main.nextState2();
-            }else if( main.getState3() == 2){
+            }else if( main.getState3() == 2 ){
                 main.nextState3();
             }else if (main.getState4() == 2 ){
                 main.getState4();
+            }else if ( main.getState5() == 5 || main.getState5() == 7 ){
+                main.nextState5();
             }
         }
     }

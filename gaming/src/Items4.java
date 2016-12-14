@@ -14,10 +14,14 @@ public class Items4 extends JComponent {
     BufferedImage blood = ImageIO.read(new File("blood.png"));  //i6
     BufferedImage ghost1 = ImageIO.read(new File("ghost.png"));  //i10
     BufferedImage crackedW = ImageIO.read(new File("crackedDisplay.png")); //i14
+    BufferedImage basebox = ImageIO.read(new File("boxx0.png")); //i23
+    BufferedImage end = ImageIO.read(new File("end.png")); //i29
 
     JButton botton6 = new JButton(new ImageIcon(blood));
     JButton botton10 = new JButton(new ImageIcon(ghost1));
     JButton botton14 = new JButton(new ImageIcon(crackedW));
+    JButton botton23 = new JButton(new ImageIcon(basebox));
+    JButton botton29 = new JButton(new ImageIcon(end));
 
     int x,y;
 
@@ -63,6 +67,28 @@ public class Items4 extends JComponent {
         lp.add(botton14,new Integer(3));
     }
 
+    public void ItemCall23(JLayeredPane lp){
+        botton23.setVisible(true);
+        botton23.setOpaque(false);
+        botton23.setContentAreaFilled(false);
+        botton23.setFocusPainted(false);
+        botton23.setBorder(BorderFactory.createEmptyBorder());
+        botton23.setBounds(x,y,basebox.getWidth(),basebox.getHeight());
+        botton23.addActionListener(new Items4.CustomActionListener());
+        lp.add(botton23,new Integer(2));
+    }
+
+    public void ItemCall29(JLayeredPane lp){
+        botton29.setVisible(true);
+        botton29.setOpaque(false);
+        botton29.setContentAreaFilled(false);
+        botton29.setFocusPainted(false);
+        botton29.setBorder(BorderFactory.createEmptyBorder());
+        botton29.setBounds(x,y,end.getWidth(),end.getHeight());
+        botton29.addActionListener(new Items4.CustomActionListener());
+        lp.add(botton29,new Integer(4));
+    }
+
     public void removeItem(JLayeredPane lp,JButton b){
         lp.remove(b);
     }
@@ -74,6 +100,8 @@ public class Items4 extends JComponent {
                 main.nextState2();
             }else if ( main.getState3() == 4 || main.getState3() == 3 ){
                 main.nextState3();
+            }else if ( main.getState5() == 2){
+                main.nextState5();
             }
         }
     }

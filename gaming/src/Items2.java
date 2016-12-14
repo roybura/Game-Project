@@ -15,9 +15,13 @@ public class Items2 extends JComponent {
     BufferedImage fampic2 = ImageIO.read(new File("familypic2.png"));
     BufferedImage fampic3 = ImageIO.read(new File("familypic3.png"));
     BufferedImage calender = ImageIO.read(new File("calender.png")); //i15
+    BufferedImage box1= ImageIO.read(new File("boxx.png")); //i25
+    BufferedImage win= ImageIO.read(new File("winner.jpg"));//i30
 
     JButton botton2 = new JButton(new ImageIcon(fampic1));
     JButton botton15 = new JButton(new ImageIcon(calender));
+    JButton botton25 = new JButton(new ImageIcon(box1));
+    JButton botton30 = new JButton(new ImageIcon(win));
 
     int x,y;
 
@@ -51,6 +55,28 @@ public class Items2 extends JComponent {
         lp.add(botton15,new Integer(2));
     }
 
+    public void ItemCall25(JLayeredPane lp){
+        botton25.setVisible(true);
+        botton25.setOpaque(false);
+        botton25.setContentAreaFilled(false);
+        botton25.setFocusPainted(false);
+        botton25.setBorder(BorderFactory.createEmptyBorder());
+        botton25.setBounds(x,y,box1.getWidth(),box1.getHeight());
+        botton25.addActionListener(new Items2.CustomActionListener());
+        lp.add(botton25,new Integer(3));
+    }
+
+    public void ItemCall30(JLayeredPane lp){
+        botton30.setVisible(true);
+        botton30.setOpaque(false);
+        botton30.setContentAreaFilled(false);
+        botton30.setFocusPainted(false);
+        botton30.setBorder(BorderFactory.createEmptyBorder());
+        botton30.setBounds(x,y,win.getWidth(),win.getHeight());
+        botton30.addActionListener(new Items2.CustomActionListener());
+        lp.add(botton30,new Integer(3));
+    }
+
     public void ChangePicState2(JLayeredPane lp){
             botton2.setIcon(new ImageIcon(fampic2));
         }
@@ -72,6 +98,8 @@ public class Items2 extends JComponent {
                 main.nextState3();
             }else if(main.getState4() == 0 ){
                 main.nextState4();
+            }else if ( main.getState5()  == 3 || main.getState5() == 4 || main.getState5() ==  8){
+                main.nextState5();
             }
         }
     }

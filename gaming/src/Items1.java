@@ -19,6 +19,7 @@ public class Items1 extends JComponent {
     BufferedImage robot2 = ImageIO.read(new File("robot2.png")); //
     BufferedImage doll = ImageIO.read(new File("doll.png")); //i17
     BufferedImage mirror2 = ImageIO.read(new File("shadowwithmirror.png")); //i19
+    BufferedImage Gun = ImageIO.read(new File("Gun.png")); //i26
 
 
     JButton botton0 = new JButton(new ImageIcon(startpush));
@@ -28,6 +29,7 @@ public class Items1 extends JComponent {
     JButton botton11 = new JButton(new ImageIcon(robot));
     JButton botton17 = new JButton(new ImageIcon(doll));
     JButton botton19 = new JButton(new ImageIcon(mirror2));
+    JButton botton26 = new JButton(new ImageIcon(Gun));
 
 
     int x,y;
@@ -118,6 +120,17 @@ public class Items1 extends JComponent {
         lp.add(botton19,new Integer(3));
     }
 
+    public void ItemCall26(JLayeredPane lp){
+        botton26.setVisible(true);
+        botton26.setOpaque(false);
+        botton26.setContentAreaFilled(false);
+        botton26.setFocusPainted(false);
+        botton26.setBorder(BorderFactory.createEmptyBorder());
+        botton26.setBounds(x,y,Gun.getWidth(),Gun.getHeight());
+        botton26.addActionListener(new Items1.CustomActionListener());
+        lp.add(botton26,new Integer(4));
+    }
+
     public void ChangePicState4(JLayeredPane lp){
         botton11.setIcon(new ImageIcon("robot2.png"));
     }
@@ -138,6 +151,8 @@ public class Items1 extends JComponent {
                 main.nextState3();
             }else if (main.getState4() == 2){
                 main.nextState4();
+            }else if (main.getState5() == 4) {
+                main.nextState5();
             }
 
         }

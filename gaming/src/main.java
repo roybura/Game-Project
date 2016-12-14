@@ -49,7 +49,13 @@ public class main {
         state4 = 0;
         state5 = 0;
 
-        int time = 100;
+        int time = 120;
+
+        if (time == 0){
+            Items4 i29 = new Items4(); //end
+            i29.setxy(0,0);
+            i29.ItemCall29(frame.layeredPane);
+        }
 
         Items1 i0 = new Items1(); //startpush
         Items1 i1 = new Items1(); //messeges
@@ -67,6 +73,7 @@ public class main {
         }
 
         i0.removeItem(frame.layeredPane, i0.botton0);
+
         frame.nextStage();
 
         state = 0;
@@ -335,7 +342,12 @@ public class main {
         state4 = 3 ;
 
         //delete doll
+
         i17.removeItem(frame.layeredPane, i17.botton17);
+        i19.removeItem(frame.layeredPane, i19.botton19);
+        frame.layeredPane.setVisible(false);
+        frame.layeredPane.setVisible(true);
+
         //show ghost
         Items3 i20 = new Items3();
         i20.setxy(420,0);
@@ -358,14 +370,141 @@ public class main {
 
         frame.nextStage4();
 
+        //show pic
+        Items6 i21 = new Items6();
+        i21.setxy(620,80);
+        i21.ItemCall21(frame.layeredPane);
+
+        //show radio
+        Items5 i22 = new Items5();
+        i22.setxy(270,340);
+        i22.ItemCall22(frame.layeredPane);
+
+        //ลิ้นชัก
+        Items4 i23 = new Items4();
+        i23.setxy(161,417);
+        i23.ItemCall23(frame.layeredPane);
+
+
         while(state5 == 0 && time>0){
             TimeUnit.SECONDS.sleep(1);
             time--;
             System.out.println("time : " + time);
-            System.out.println("state4 : " + state4);
+            System.out.println("state5 : " + state5);
         }
 
         state5 = 1;
+
+        //show Bigpic
+        Items3 i24 = new Items3();
+        i24.setxy(0,0);
+        i24.ItemCall24(frame.layeredPane);
+
+        while(state5 == 1 && time>0){
+            TimeUnit.SECONDS.sleep(1);
+            time--;
+            System.out.println("time : " + time);
+            System.out.println("state5 : " + state5);
+        }
+
+        state5 = 2 ;
+
+        //bigpic disapear
+        i24.removeItem(frame.layeredPane, i24.botton24);
+        frame.layeredPane.setVisible(false);
+        frame.layeredPane.setVisible(true);
+
+        while(state5 == 2 && time>0){
+            TimeUnit.SECONDS.sleep(1);
+            time--;
+            System.out.println("time : " + time);
+            System.out.println("state5 : " + state5);
+        }
+
+        state5 = 3 ;
+        //show boxx
+        Items2 i25 = new Items2();
+        i25.setxy(181,405);
+        i25.ItemCall25(frame.layeredPane);
+
+        while(state5 == 3 && time>0){
+            TimeUnit.SECONDS.sleep(1);
+            time--;
+            System.out.println("time : " + time);
+            System.out.println("state5 : " + state5);
+        }
+
+        state5 = 4 ;
+
+        //show big gun
+        Items1 i26 = new Items1();
+        i26.setxy(0,0);
+        i26.ItemCall26(frame.layeredPane);
+
+        while(state5 == 4 && time>0){
+            TimeUnit.SECONDS.sleep(1);
+            time--;
+            System.out.println("time : " + time);
+            System.out.println("state5 : " + state5);
+        }
+
+        state5 = 5 ;
+
+        //big gun out
+        i26.removeItem(frame.layeredPane, i26.botton26);
+        frame.layeredPane.setVisible(false);
+        frame.layeredPane.setVisible(true);
+
+        while(state5 == 5 && time>0){
+            TimeUnit.SECONDS.sleep(1);
+            time--;
+            System.out.println("time : " + time);
+            System.out.println("state5 : " + state5);
+        }
+
+        state5 = 6;
+
+        //pic disapear
+        i21.removeItem(frame.layeredPane, i21.botton21);
+        frame.layeredPane.setVisible(false);
+        frame.layeredPane.setVisible(true);
+        //picdown
+        Items6 i27 = new Items6();
+        i27.setxy(545,150);
+        i27.ItemCall27(frame.layeredPane);
+
+        while(state5 == 6 && time>0){
+            TimeUnit.SECONDS.sleep(1);
+            time--;
+            System.out.println("time : " + time);
+            System.out.println("state5 : " + state5);
+        }
+
+        state5 = 7;
+
+        //show key
+        Items5 i28 = new Items5();
+        i28.setxy(430,500);
+        i28.ItemCall28(frame.layeredPane);
+
+        while(state5 == 7 && time>0){
+            TimeUnit.SECONDS.sleep(1);
+            time--;
+            System.out.println("time : " + time);
+            System.out.println("state5 : " + state5);
+        }
+
+        state5 = 8;
+        //win
+
+        i25.removeItem(frame.layeredPane, i25.botton25);
+        i28.removeItem(frame.layeredPane, i28.botton28);
+        frame.layeredPane.setVisible(false);
+        frame.layeredPane.setVisible(true);
+
+        Items2 i30 = new Items2();
+        i30.setxy(0,0);
+        i30.ItemCall30(frame.layeredPane);
 
 
     }
